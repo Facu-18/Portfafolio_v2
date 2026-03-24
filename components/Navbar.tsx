@@ -28,56 +28,58 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-slate-950/40/90 backdrop-blur-2xl border-b border-slate-800 shadow-xl shadow-slate-200/50"
-          : ""
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled
+          ? "bg-white border-b-4 border-black shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]"
+          : "bg-transparent"
+        }`}
     >
-      <div className="container flex h-[60px] items-center justify-between">
+      <div className="max-w-7xl mx-auto flex h-[80px] items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand */}
         <button
           onClick={() => go("#home")}
-          className="text-white font-bold text-xl tracking-tight transition-colors hover:text-blue-600"
+          className="text-black font-black text-2xl tracking-tighter transition-transform hover:-translate-y-1 border-b-[4px] border-black pb-0.5 cursor-pointer flex items-baseline"
         >
-          Moriconi<span className="text-blue-600">.</span>
+          Moriconi Facundo<span className="text-black"></span>
         </button>
 
-        {/* Desktop */}
-        <nav className="hidden md:flex items-center gap-3">
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
             <button
               key={l.href}
               onClick={() => go(l.href)}
-              className="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-blue-600 rounded-xl hover:bg-slate-800/50 transition-all"
+              className="text-[15px] font-bold text-gray-600 hover:text-black transition-colors"
             >
               {l.label}
             </button>
           ))}
-          <div className="w-px h-5 bg-slate-200 mx-1" />
+        </nav>
+
+        {/* Desktop Socials */}
+        <div className="hidden lg:flex items-center gap-4">
           <a
             href="https://github.com/Facu-18"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 ml-1 text-slate-400 hover:text-blue-600 rounded-lg hover:bg-slate-800/50 transition-all"
+            className="p-2 border-2 border-black bg-white text-black hover:bg-black hover:text-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 transition-all"
             aria-label="GitHub"
           >
-            <Github size={17} />
+            <Github size={20} />
           </a>
           <a
             href="https://www.linkedin.com/in/facundo-moriconi-0668822a0/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-slate-400 hover:text-blue-400 rounded-lg hover:bg-slate-800/50 transition-all"
+            className="p-2 border-2 border-black bg-white text-black hover:bg-black hover:text-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 transition-all"
             aria-label="LinkedIn"
           >
-            <Linkedin size={17} />
+            <Linkedin size={20} />
           </a>
-        </nav>
+        </div>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-slate-400 hover:text-blue-600"
+          className="lg:hidden p-2 text-black border-2 border-black bg-white hover:bg-black hover:text-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 transition-all"
           onClick={() => setOpen((p) => !p)}
         >
           {open ? <X size={20} /> : <Menu size={20} />}
@@ -91,18 +93,38 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-slate-800 bg-slate-950/40/90 backdrop-blur-2xl"
+            className="lg:hidden bg-white border-b-4 border-black overflow-hidden"
           >
-            <div className="container py-4 flex flex-col gap-1">
+            <div className="flex flex-col p-4 gap-4">
               {links.map((l) => (
                 <button
                   key={l.href}
                   onClick={() => go(l.href)}
-                  className="text-left px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-800/50 rounded-xl transition-all"
+                  className="text-left px-4 py-3 text-lg font-black uppercase tracking-tight text-white bg-black border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-x-1 hover:-translate-y-1"
                 >
                   {l.label}
                 </button>
               ))}
+              <div className="flex items-center gap-4 mt-2 px-4">
+                <a
+                  href="https://github.com/Facu-18"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 p-3 flex justify-center border-2 border-black bg-white text-black hover:bg-black hover:text-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 transition-all"
+                  aria-label="GitHub"
+                >
+                  <Github size={24} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/facundo-moriconi-0668822a0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 p-3 flex justify-center border-2 border-black bg-white text-black hover:bg-black hover:text-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={24} />
+                </a>
+              </div>
             </div>
           </motion.nav>
         )}

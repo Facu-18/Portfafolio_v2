@@ -19,9 +19,9 @@ const projects: Project[] = [
     id: "project-1",
     title: "DS Barber",
     description: "Sistema de reservas y administración para barberías con panel operativo, turnos online y flujos automatizados.",
-    tech: ["Next.js", "Node.js", "MongoDB"],
+    tech: ["Next.js", "Node.js", "PostgreSQL"],
     videoSrc: "/video-barberia.mp4",
-    demoLink: "https://dsbarber.vercel.app",
+    demoLink: "https://ds-barber.vercel.app",
     githubLink: "#",
   },
   {
@@ -30,7 +30,7 @@ const projects: Project[] = [
     description: "Asistente conversacional conectado a workflows de n8n para clasificar consultas y responder en tiempo real.",
     tech: ["n8n", "OpenAI", "Webhooks"],
     videoSrc: "/chatbot-n8n.mp4",
-    demoLink: "https://chatbot-n8n.vercel.app",
+    demoLink: "https://www.linkedin.com/posts/facundo-moriconi-0668822a0_automatizaciaejn-n8n-openai-activity-7401214598915211264-zg7V?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEi-dc4BIFCZAq7WNj8zIhGPbRns_Vm6gi8",
     githubLink: "#",
   },
 ];

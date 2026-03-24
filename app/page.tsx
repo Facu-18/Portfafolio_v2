@@ -6,6 +6,7 @@ import PhoneDuo from "../components/sections/PhoneDuo";
 import Projects from "../components/sections/Projects";
 import EducationCertifications from "../components/sections/EducationCertifications";
 import Contact from "../components/sections/Contact";
+import Footer from "../components/sections/Footer";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <EducationCertifications />
       <div className="divider" />
       <Contact />
+      <Footer />
     </>
   );
 }

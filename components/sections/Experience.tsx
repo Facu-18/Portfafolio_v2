@@ -22,30 +22,30 @@ const experienceData: ExperienceItem[] = [
     company: "ITPS ONE · Consultoría IT",
     position: "Software Developer",
     period: "Actual",
-    description: "Desarrollo de microservicios y soluciones empresariales escalables. Colaboro en proyectos críticos optimizando el backend bajo metodologías ágiles, asegurando la calidad del código y la eficiencia en procesos de negocio.",
+    description: "Estoy trabajando en un proyecto de seguridad vial para Buenos Aires desarrollando un backoffice con Next.js 16, aplicando Atomic Design y arquitectura fullstack, incluyendo frontend y APIs dentro de la misma aplicación.",
     logoUrl: "/itps_one.svg",
     achievements: [
-      "Node.js",
-      "Enterprise software",
-      "Backend & APIs",
-      "Arquitectura de Microservicios",
+      "Nextjs 16",
+      "Atomic Design",
+      "Backend & Frontend",
+      "Arquitectura escalable",
     ],
     linkUrl: "https://www.itps.one",
   },
   {
     id: 2,
     company: "XerionTech",
-    position: "Fundador / Frontend & Backend Dev",
-    period: "2023 - Presente",
-    description: "Startup de desarrollo a medida enfocada en transformar la operativa de sus clientes con software. Diseñamos e implementamos sistemas web, soluciones B2B y landing pages, unificando diseño visual y escalabilidad técnica.",
+    position: "Frontend & Backend Dev",
+    period: "2025 - Actual",
+    description: "Estoy trabajando en una startup de desarrollo de software a medida donde construyo soluciones fullstack para clientes, creando sistemas web, landing pages y herramientas B2B con Next.js, Node.js y bases de datos.",
     logoUrl: "/xeriontech.svg",
     achievements: [
       "Liderazgo en creación de proyectos (DSBarber, Chatbots, etc.)",
       "Desarrollo fullstack usando Next.js, Node.js y PostreSQL/MongoDB",
       "Gestión de relaciones B2B y requerimientos UI/UX",
-      "qa"
+      "Arquitectura escalable"
     ],
-    linkUrl: "https://www.xeriontech.online/",
+    linkUrl: "https://xerion-tech.vercel.app/",
   },
 ];
 
