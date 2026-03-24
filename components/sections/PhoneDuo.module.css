@@ -1,0 +1,766 @@
+/* PhoneDuo Styles - Black & White Theme */
+
+.mobileProjectsContainer {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 80px 16px 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background Effects */
+.backgroundWrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.backgroundGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #fafafa 0%, #ffffff 50%, #f5f5f5 100%);
+}
+
+.gradientOrb1 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 384px;
+  height: 384px;
+  background: #000000;
+  border-radius: 9999px;
+  filter: blur(96px);
+  animation: pulse-orb-1 8s ease-in-out infinite;
+}
+
+.gradientOrb2 {
+  position: absolute;
+  bottom: 25%;
+  right: 25%;
+  width: 384px;
+  height: 384px;
+  background: #333333;
+  border-radius: 9999px;
+  filter: blur(96px);
+  animation: pulse-orb-2 8s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes pulse-orb-1 {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.03;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.06;
+  }
+}
+
+@keyframes pulse-orb-2 {
+  0%, 100% {
+    transform: scale(1.2);
+    opacity: 0.03;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.06;
+  }
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Content Container */
+.contentContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.headerSection {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mainTitle {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  background: linear-gradient(to right, #000000 0%, #333333 50%, #000000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fade-in-down 0.8s ease-out 0.2s both;
+}
+
+.mainDescription {
+  font-size: 1.5rem;
+  color: #666666;
+  max-width: 768px;
+  margin: 0 auto;
+  animation: fade-in 0.8s ease-out 0.4s both;
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Phones Container */
+.phonesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 120px; /* Space between phones */
+  padding-top: 20px;
+  padding-bottom: 80px;
+  position: relative;
+  width: 100%;
+}
+
+/* Phone Wrapper */
+.phoneWrapper {
+  position: relative;
+  cursor: pointer;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  width: 320px;
+  /* Removed absolute positioning */
+}
+
+.phoneWrapper.left {
+  z-index: 2;
+}
+
+.phoneWrapper.right {
+  z-index: 1;
+}
+
+/* Phone 3D Container */
+.phone3dContainer {
+  transform-style: preserve-3d;
+}
+
+/* iPhone Container */
+.iphoneContainer {
+  position: relative;
+  width: 320px;
+  height: 640px;
+}
+
+/* Back of Phone */
+.phoneBack {
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  transform: translateZ(-20px);
+  transform-style: preserve-3d;
+}
+
+.phoneBackGlass {
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(135deg, 
+    rgba(40, 40, 40, 1) 0%, 
+    rgba(25, 25, 25, 1) 50%, 
+    rgba(15, 15, 15, 1) 100%);
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Camera Module */
+.cameraModule {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(50, 50, 50, 1) 0%, rgba(30, 30, 30, 1) 100%);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.5), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.cameraLens {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #333333, #000000);
+  border: 2px solid #444444;
+}
+
+.cameraLens1 {
+  top: 8px;
+  left: 8px;
+}
+
+.cameraLens2 {
+  top: 8px;
+  right: 8px;
+}
+
+.cameraLens3 {
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cameraLensInner {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, 
+    rgba(100, 100, 100, 0.3) 0%, 
+    rgba(80, 80, 80, 0.3) 100%);
+}
+
+.cameraLensCore {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.cameraFlash {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #e5e5e5, #cccccc);
+}
+
+/* Apple Logo */
+.appleLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 50px;
+  opacity: 0.15;
+  color: #666666;
+}
+
+/* Side Edges */
+.phoneEdge {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.phoneEdgeLeft {
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+}
+
+.phoneEdgeRight {
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+}
+
+.phoneEdgeTop {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+}
+
+.phoneEdgeBottom {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+}
+
+.edgeSurfaceLeft {
+  position: absolute;
+  inset: 0;
+  border-radius: 60px 0 0 60px;
+  background: linear-gradient(to right, 
+    rgba(70, 70, 70, 1) 0%, 
+    rgba(90, 90, 90, 1) 50%, 
+    rgba(70, 70, 70, 1) 100%);
+  transform: translateZ(-10px) rotateY(-90deg);
+  transform-origin: left center;
+  width: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.edgeSurfaceRight {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 60px 60px 0;
+  background: linear-gradient(to left, 
+    rgba(70, 70, 70, 1) 0%, 
+    rgba(90, 90, 90, 1) 50%, 
+    rgba(70, 70, 70, 1) 100%);
+  transform: translateZ(-10px) rotateY(90deg);
+  transform-origin: right center;
+  width: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.edgeSurfaceTop {
+  position: absolute;
+  inset: 0;
+  border-radius: 60px 60px 0 0;
+  background: linear-gradient(to bottom, 
+    rgba(70, 70, 70, 1) 0%, 
+    rgba(90, 90, 90, 1) 50%, 
+    rgba(70, 70, 70, 1) 100%);
+  transform: translateZ(-10px) rotateX(90deg);
+  transform-origin: top center;
+  height: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.edgeSurfaceBottom {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 0 60px 60px;
+  background: linear-gradient(to top, 
+    rgba(70, 70, 70, 1) 0%, 
+    rgba(90, 90, 90, 1) 50%, 
+    rgba(70, 70, 70, 1) 100%);
+  transform: translateZ(-10px) rotateX(-90deg);
+  transform-origin: bottom center;
+  height: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Phone Body */
+.phoneBody {
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 
+    0 50px 100px -20px rgba(0, 0, 0, 0.8),
+    0 30px 60px -30px rgba(255, 255, 255, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Outer Frame */
+.phoneFrameOuter {
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  padding: 3px;
+  background: linear-gradient(135deg, 
+    #404040 0%, 
+    #1a1a1a 25%, 
+    #0a0a0a 50%, 
+    #1a1a1a 75%, 
+    #404040 100%);
+  transform: translateZ(10px);
+}
+
+/* Inner Frame */
+.phoneFrameInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 58px;
+  padding: 9px;
+  background: #000000;
+  transform: translateZ(5px);
+}
+
+/* Screen Container */
+.phoneScreenContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  overflow: hidden;
+  background: #000000;
+  transform: translateZ(2px);
+}
+
+/* Dynamic Island */
+.dynamicIsland {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateZ(10px);
+  width: 120px;
+  height: 30px;
+  background: #000000;
+  border-radius: 9999px;
+  z-index: 30;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Screen */
+.phoneScreen {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Video Content */
+.videoContent {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder Content */
+.placeholderContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 50%, #f5f5f5 100%);
+}
+
+.placeholderPattern {
+  position: absolute;
+  inset: 0;
+  animation: pulse-pattern 4s ease-in-out infinite;
+}
+
+@keyframes pulse-pattern {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+.placeholderInner {
+  text-align: center;
+  padding: 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.placeholderIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  color: #666666;
+  animation: float-icon 2s ease-in-out infinite;
+}
+
+@keyframes float-icon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.placeholderTitle {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+.placeholderSubtitle {
+  font-size: 0.75rem;
+  color: #999999;
+}
+
+/* Screen Glare */
+.screenGlare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%);
+  transform: translateZ(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.phoneWrapper:hover .screenGlare {
+  opacity: 0.15;
+}
+
+/* Physical Buttons */
+.sideButton {
+  position: absolute;
+  right: 0;
+  top: 120px;
+  width: 3px;
+  height: 60px;
+  background: linear-gradient(to bottom, #888888, #555555);
+  border-radius: 2px 0 0 2px;
+  transform: translateZ(12px) translateX(3px);
+}
+
+.volumeButton1 {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 3px;
+  height: 30px;
+  background: linear-gradient(to bottom, #888888, #555555);
+  border-radius: 0 2px 2px 0;
+  transform: translateZ(12px) translateX(-3px);
+}
+
+.volumeButton2 {
+  position: absolute;
+  left: 0;
+  top: 140px;
+  width: 3px;
+  height: 30px;
+  background: linear-gradient(to bottom, #888888, #555555);
+  border-radius: 0 2px 2px 0;
+  transform: translateZ(12px) translateX(-3px);
+}
+
+/* Shadows */
+.floatingShadow {
+  position: absolute;
+  bottom: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 160px;
+  border-radius: 9999px;
+  filter: blur(48px);
+  z-index: -10;
+  background: radial-gradient(ellipse, 
+    rgba(255, 255, 255, 0.3) 0%, 
+    rgba(255, 255, 255, 0.1) 40%, 
+    transparent 70%);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.phoneWrapper:hover .floatingShadow {
+  opacity: 0.7;
+  transform: translateX(-50%) scale(1.15) translateY(10px);
+}
+
+.surfaceReflection {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateZ(-50px) scaleY(-1);
+  width: 100%;
+  height: 300px;
+  border-radius: 60px;
+  filter: blur(2px);
+  background: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    transparent 60%);
+  opacity: 0.08;
+  transition: opacity 0.3s ease;
+}
+
+.phoneWrapper:hover .surfaceReflection {
+  opacity: 0.15;
+}
+
+/* Project Info Card */
+.projectInfo {
+  margin-top: 48px;
+  text-align: center;
+  max-width: 384px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateZ(50px);
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.phoneWrapper:hover .projectInfo {
+  opacity: 1;
+  transform: translateZ(50px) scale(1.02);
+}
+
+.projectCard {
+  position: relative;
+  padding: 24px;
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, 
+    rgba(20, 20, 20, 0.8) 0%, 
+    rgba(40, 40, 40, 0.6) 100%);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.phoneWrapper:hover .projectCard {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 60px -10px rgba(255, 255, 255, 0.2);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(circle at center, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    transparent 70%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.phoneWrapper:hover .cardGlow {
+  opacity: 0.2;
+  transform: scale(1);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 10;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.projectDescription {
+  color: #cccccc;
+  font-size: 0.875rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Tech Stack */
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.techBadge {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.techBadge:hover {
+  transform: scale(1.05);
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 100%);
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btnPrimary:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.btnSecondary {
+  background: rgba(40, 40, 40, 0.8);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btnSecondary:hover {
+  transform: scale(1.05) translateY(-2px);
+  background: rgba(60, 60, 60, 0.8);
+}
+
+.btnIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 3rem;
+  }
+  
+  .mainDescription {
+    font-size: 1.25rem;
+  }
+  
+  .iphoneContainer {
+    width: 280px;
+    height: 560px;
+  }
+  
+  .phonesContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    padding-bottom: 40px;
+  }
+}
