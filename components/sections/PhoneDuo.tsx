@@ -269,8 +269,8 @@ export default function PhoneDuo() {
           </p>
         </div>
 
-        {/* Phones */}
-        <div className={styles.phonesContainer}>
+        {/* Phones Desktop */}
+        <div className={`${styles.phonesContainer} ${styles.desktopView}`}>
           {projects.map((project, index) => (
             <Phone3D
               key={project.id}
@@ -280,6 +280,59 @@ export default function PhoneDuo() {
               onHover={(state) => setHoveredProject(state ? project.id : null)}
             />
           ))}
+        </div>
+
+        {/* Phones Mobile */}
+        <div className={styles.mobileView}>
+          <div className={styles.mobileCardsContainer}>
+            {projects.map((project) => (
+              <div key={project.id} className={styles.mobileCard}>
+                <div className={styles.mobileVideoContainer}>
+                  {project.videoSrc ? (
+                    <video
+                      src={project.videoSrc}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100">
+                      <Smartphone size={40} className="text-gray-400 mb-2" />
+                      <span className="text-gray-500 font-bold uppercase">Video Preview</span>
+                    </div>
+                  )}
+                </div>
+                <div className={styles.mobileCardContent}>
+                  <h3 className={styles.mobileCardTitle}>{project.title}</h3>
+                  <p className={styles.mobileCardDesc}>{project.description}</p>
+                  
+                  <div className={styles.mobileTechStack}>
+                    {project.tech.map((tech) => (
+                      <span key={tech} className={styles.mobileTechBadge}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className={styles.mobileActions}>
+                    {project.demoLink && project.demoLink !== "#" && (
+                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className={`${styles.mobileBtn} ${styles.mobileBtnPrimary}`}>
+                        <ExternalLink size={18} />
+                        Demo
+                      </a>
+                    )}
+                    {project.githubLink && project.githubLink !== "#" && (
+                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={`${styles.mobileBtn} ${styles.mobileBtnSecondary}`}>
+                        <Github size={18} />
+                        Código
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

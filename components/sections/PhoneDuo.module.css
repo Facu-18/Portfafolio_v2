@@ -742,25 +742,141 @@
   height: 16px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive Rules */
+.desktopView {
+  display: flex;
+  width: 100%;
+}
+
+.mobileView {
+  display: none;
+  width: 100%;
+}
+
+.mobileCardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  padding: 0 16px;
+  margin-top: 40px;
+}
+
+.mobileCard {
+  background: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileVideoContainer {
+  width: 100%;
+  aspect-ratio: 9/16;
+  background: #000;
+  border-bottom: 4px solid #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobileVideoContainer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobileCardContent {
+  padding: 24px;
+}
+
+.mobileCardTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.mobileCardDesc {
+  font-size: 1rem;
+  color: #333333;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.mobileTechStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.mobileTechBadge {
+  background: #000000;
+  color: #ffffff;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid #000000;
+}
+
+.mobileActions {
+  display: flex;
+  gap: 12px;
+}
+
+.mobileBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 2px solid #000000;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.mobileBtnPrimary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.mobileBtnPrimary:active {
+  background: #ffffff;
+  color: #000000;
+}
+
+.mobileBtnSecondary {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.mobileBtnSecondary:active {
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+  transform: translate(3px, 3px);
+}
+
+@media (max-width: 1024px) {
+  .desktopView {
+    display: none !important;
+  }
+  .mobileView {
+    display: block !important;
+  }
   .mainTitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
-  
   .mainDescription {
-    font-size: 1.25rem;
-  }
-  
-  .iphoneContainer {
-    width: 280px;
-    height: 560px;
-  }
-  
-  .phonesContainer {
-    flex-direction: column;
-    align-items: center;
-    gap: 80px;
-    padding-bottom: 40px;
+    font-size: 1.125rem;
+    padding: 0 16px;
   }
 }
+

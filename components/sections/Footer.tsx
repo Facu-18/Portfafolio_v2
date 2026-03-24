@@ -3,6 +3,11 @@ import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const go = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.footerContent}>
@@ -31,12 +36,12 @@ export default function Footer() {
         <div className={styles.footerSection}>
           <h4 className={styles.footerHeading}>NAVEGACIÓN</h4>
           <nav className={styles.footerNav}>
-            <a href="#hero" className={styles.footerLink}>Inicio</a>
-            <a href="#experience" className={styles.footerLink}>Experiencia</a>
-            <a href="#phoneduo" className={styles.footerLink}>Proyectos Mobile</a>
-            <a href="#projects" className={styles.footerLink}>Portfolio</a>
-            <a href="#education-certifications" className={styles.footerLink}>Formación</a>
-            <a href="#contact" className={styles.footerLink}>Contacto</a>
+            <a href="#home" onClick={(e) => go(e, "#home")} className={styles.footerLink}>Inicio</a>
+            <a href="#experience" onClick={(e) => go(e, "#experience")} className={styles.footerLink}>Experiencia</a>
+            <a href="#ai-automations" onClick={(e) => go(e, "#ai-automations")} className={styles.footerLink}>Proyectos Mobile</a>
+            <a href="#projects" onClick={(e) => go(e, "#projects")} className={styles.footerLink}>Portfolio</a>
+            <a href="#education-certifications" onClick={(e) => go(e, "#education-certifications")} className={styles.footerLink}>Formación</a>
+            <a href="#contact" onClick={(e) => go(e, "#contact")} className={styles.footerLink}>Contacto</a>
           </nav>
         </div>
 
